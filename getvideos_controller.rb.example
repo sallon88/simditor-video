@@ -1,0 +1,6 @@
+class GetvideosController < ApplicationController
+  def show
+    video = Getvideo.parse params[:url] if params[:url]
+    render json: video.json
+  end
+end

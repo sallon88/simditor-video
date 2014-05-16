@@ -1,0 +1,21 @@
+{
+  "name": "simditor-video",
+  "version": "0.0.1",
+  "description": "A simditor video plugin",
+  "main": "src/simditor-video.coffee",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sallon88/simditor-video.git"
+  },
+  "author": "sallon88",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sallon88/simditor-video/issues"
+  },
+  "homepage": "https://github.com/sallon88/simditor-video",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.10.1"
+  }
+}
