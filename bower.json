@@ -1,0 +1,26 @@
+{
+  "name": "simditor-video",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sallon88/simditor-video",
+  "authors": [
+    "sallon88 <sallon88@gmail.com>"
+  ],
+  "description": "a simditor plugin video",
+  "main": "lib/simditor-emoji.js",
+  "keywords": [
+    "simditor",
+    "video"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+		"Gruntfile.coffee",
+		"package.json"
+  ],
+	"dependencies": {
+		"jquery": "~2.1.0",
+		"simditor": "~1.0.0"
+	}
+}
