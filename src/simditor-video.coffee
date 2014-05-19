@@ -70,7 +70,13 @@ class VideoButton extends SimditorButton
 
     videoNode = $(@_videoTpl.replace('---video-src---', videoSrc))
     target.after videoNode
+    newBlockEl = $('<p/>').append(@editor.util.phBr)
+    videoNode.after newBlockEl
+
+    range = document.createRange()
+    @editor.selection.setRangeAtStartOf newBlockEl, range
     @editor.trigger 'valuechanged'
+    @editor.trigger 'selectionchanged'
 
   command: () ->
     range = @editor.selection.getRange()
