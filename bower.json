@@ -21,6 +21,6 @@
   ],
 	"dependencies": {
 		"jquery": "~2.1.0",
-		"simditor": "~1.0.0"
+		"simditor": "master"
 	}
 }

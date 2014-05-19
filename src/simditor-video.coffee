@@ -14,40 +14,12 @@ class VideoButton extends SimditorButton
 
   disableTag: 'pre, table'
 
-  setupVideoConfig: ->
+  render: (args...) ->
     @editor.formatter._allowedTags.push 'embed'
     @editor.formatter._allowedAttributes['embed'] = ['allowfullscreen', 'id', 'quality', 'width', 'height', 'align', 'src', 'type']
 
-    # overwrite sync to prevent removing embed element at the last/start content
-    @editor.sync = =>
-      cloneBody = @editor.body.clone()
-      @editor.formatter.undecorate cloneBody
-      @editor.formatter.format cloneBody
-
-      # generate `a` tag automatically
-      @editor.formatter.autolink cloneBody
-
-      # remove empty `p` tag at the start/end of content
-      children = cloneBody.children()
-      lastP = children.last 'p'
-      firstP = children.first 'p'
-      while lastP.is('p') and !lastP.text() and !lastP.find('img').length and !lastP.find('embed').length
-
-        emptyP = lastP
-        lastP = lastP.prev 'p'
-        emptyP.remove()
-      while firstP.is('p') and !firstP.text() and !firstP.find('img').length and !firstP.find('embed').length
-        emptyP = firstP
-        firstP = lastP.next 'p'
-        emptyP.remove()
-
-      val = $.trim(cloneBody.html())
-      @editor.textarea.val val
-      val
-
-  render: (args...) ->
     super args...
-    @setupVideoConfig()
+
     @popover = new VideoPopover(@)
 
   parseVideoSrc: (src) ->
