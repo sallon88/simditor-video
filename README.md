@@ -29,4 +29,7 @@ new Simditor({
 
 接口格式
 
-请求: /getvideo?url=:page_url, 返回: { flash: :swf_url }, 其中 :page_url为输入的网页地址, :swf_url为解析后的swf地址
+- 请求: /getvideo?url=:page_url
+- 返回: { flash: :swf_url }
+
+其中 :page_url为输入的网页地址, :swf_url为解析后的swf地址
