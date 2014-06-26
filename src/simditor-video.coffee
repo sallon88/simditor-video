@@ -50,7 +50,7 @@ class VideoButton extends SimditorButton
     @editor.trigger 'valuechanged'
     @editor.trigger 'selectionchanged'
 
-  command: () ->
+  command: ->
     range = @editor.selection.getRange()
     startNode = range.startContainer
     endNode = range.endContainer
@@ -92,7 +92,6 @@ class VideoPopover extends SimditorPopover
       <div class="settings-field">
         <label>视频地址</label>
         <input class="video-src" type="text"/>
-        </a>
       </div>
     </div>
   """
